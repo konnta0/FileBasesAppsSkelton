@@ -47,13 +47,13 @@ public class SortBenchmark
     [Benchmark]
     public int[] LinqOrderByStatic()
     {
-        return _data.OrderBy(static x => x).ToArray();
+        return [.. _data.OrderBy(static x => x)];
     }
 
     [Benchmark]
     public int[] LinqOrderBy()
     {
-        return _data.OrderBy(x => x).ToArray();
+        return [.. _data.OrderBy(x => x)];
     }
 
     [Benchmark]
